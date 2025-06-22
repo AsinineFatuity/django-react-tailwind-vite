@@ -3,12 +3,17 @@ name = "django-react-tailwind-vite"
 version = "0.1.5"
 description = "Script to set up a Django-React hybrid project with Tailwind CSS and Vite"
 readme = "README.md"
+license = { text = "MIT" }
 authors = [
     { name = "Kembo Franklyne", email = "kembofranklyne@gmail.com" }
 ]
 requires-python = ">=3.10"
 dependencies = [
 ]
+[project.urls]
+repository = "https://github.com/AsinineFatuity/django-react-tailwind-vite"
+homepage = "https://github.com/AsinineFatuity/django-react-tailwind-vite"
+documentation = "https://github.com/AsinineFatuity/django-react-tailwind-vite"
 
 [project.scripts]
 dj-vite = "django_react_tailwind_vite.setup_project:main"
