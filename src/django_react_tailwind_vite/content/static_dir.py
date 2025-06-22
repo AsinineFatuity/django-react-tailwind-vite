@@ -1,3 +1,3 @@
-MAIN_CSS_CONTENT= """
+MAIN_CSS_CONTENT = """
 @import "tailwindcss";
 """

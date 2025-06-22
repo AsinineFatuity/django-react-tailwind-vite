@@ -1,4 +1,4 @@
-VITE_CONFIG_CONTENT="""
+VITE_CONFIG_CONTENT = """
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'

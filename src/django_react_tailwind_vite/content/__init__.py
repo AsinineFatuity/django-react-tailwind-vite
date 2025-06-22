@@ -1,10 +1,13 @@
 from content.package_json import PACKAGE_JSON_CONTENT
 from content.vite_config import VITE_CONFIG_CONTENT
 from content.requirements import REQUIREMENTS_CONTENT
-from content.dwango.manage import write_manage_py_content
-from content.dwango.asgi import write_django_asgi_content
-from content.dwango.wsgi import write_django_wsgi_content
-from content.dwango.settings import write_django_settings_content
+from .dwango import (
+    write_manage_py_content,
+    write_django_asgi_content,
+    write_django_wsgi_content,
+    write_django_settings_content,
+    DJANGO_URLS_CONTENT
+)
 from content.html import HOME_HTML_CONTENT
 from content.static_dir import MAIN_CSS_CONTENT
 from content.gitinore import GITIGNORE_CONTENT
@@ -31,4 +34,3 @@ from content.redux_reducer import (
 from content.redux_store import REDUX_STORE_CONTENT
 from content.hooks import HOOKS_INDEX_TS_CONTENT
 from content.ts_config import TS_CONFIG_JSON_CONTENT
-from content.dwango.urls import DJANGO_URLS_CONTENT

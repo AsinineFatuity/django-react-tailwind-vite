@@ -1,4 +1,4 @@
-MANAGE_PY_CONTENT= """
+MANAGE_PY_CONTENT = """
 #!/usr/bin/env python
 import os
 import sys
@@ -20,6 +20,7 @@ def main():
 if __name__ == '__main__':
     main()
 """
+
 
 def write_manage_py_content(project_name: str) -> str:
     return MANAGE_PY_CONTENT.format(project_name)

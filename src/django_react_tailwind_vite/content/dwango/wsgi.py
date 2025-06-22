@@ -8,6 +8,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', '{}.settings')
 application = get_wsgi_application()
 """
 
+
 def write_django_wsgi_content(project_name: str):
     asgi_content = DJANGO_WSGI_CONTENT.format(project_name)
     return asgi_content

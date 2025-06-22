@@ -1,4 +1,4 @@
-DJANGO_SETTINGS_CONTENT="""
+DJANGO_SETTINGS_CONTENT = """
 import os
 from pathlib import Path
 
@@ -130,6 +130,7 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 7  # 1 week
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 """
+
 
 def write_django_settings_content(project_name: str):
     return DJANGO_SETTINGS_CONTENT.format(project_name, project_name)

@@ -4,7 +4,6 @@ from ..constants import names
 
 
 class SetUpRootDir:
-
     def __init__(self, project_root: str):
         self.PROJECT_ROOT = project_root
 
@@ -21,7 +20,7 @@ class SetUpRootDir:
         with open(names.PACKAGE_JSON_FILE, "w") as package_json_file:
             package_json_file.write(content.PACKAGE_JSON_CONTENT)
         print("✅ package.json file created successfully")
-        
+
     def _setup_vite_config_files(self):
         with open(names.VITE_CONFIG_FILE, "w") as vite_config_file:
             vite_config_file.write(content.VITE_CONFIG_CONTENT)
@@ -54,13 +53,14 @@ class SetUpRootDir:
             ts_config_file.write(content.TS_CONFIG_JSON_CONTENT)
         print("✅ tsconfig.json file created successfully")
         os.chdir(self.PROJECT_ROOT)
-    
+
     def _setup_requirements_file(self):
         print("📦 Setting up requirements.txt file ...")
         with open(names.REQUIREMENTS_FILE, "w") as requirements_file:
             requirements_file.write(content.REQUIREMENTS_CONTENT)
         print("✅ requirements.txt file created successfully")
         os.chdir(self.PROJECT_ROOT)
+
     def _setup_gitignore_file(self):
         print("📦 Setting up .gitignore file ...")
         with open(names.GITIGNORE_FILE, "w") as gitignore_file:

@@ -1,4 +1,4 @@
-GITIGNORE_CONTENT="""
+GITIGNORE_CONTENT = """
 #Node.js dependencies
 node_modules/
 .vite
