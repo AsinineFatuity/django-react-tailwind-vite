@@ -11,9 +11,7 @@ class SetUpFrontend:
         self.django_project_folder = django_project_folder
 
     def set_up_frontend_project(self):
-        if not self._create_django_project_folder():
-            return
-
+        print(f"📦 Setting up {self.django_project_folder} project files ...")
         root_dir = SetUpRootDir(self.project_root)
         root_dir.set_up_root_dir()
         frontend_dir = SetUpFrontendDir(self.project_root)
@@ -28,6 +26,6 @@ django_project_folder = input("Enter the name of your Django project: ")
 frontend = SetUpFrontend(django_project_folder)
 frontend.set_up_frontend_project()
 print("#" * 50)
-print("🎉 Frontend project setup completed successfully!")
+print(f"🎉 Frontend {django_project_folder} setup completed successfully!")
 print("#" * 50)
 print("Visit https://github.com/AsinineFatuity/django-react-bootstrap-webpack#post-script-instructions for post script instruction")
