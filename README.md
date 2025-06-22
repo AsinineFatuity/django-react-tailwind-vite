@@ -1,5 +1,6 @@
 # Hybrid Django-React-Tailwind-Vite Setup
-![ChatGPT Image Jun 22, 2025, 03_31_41 PM](https://github.com/user-attachments/assets/04eba5fe-ed52-43b9-b444-37485b0892be)
+<img src="https://github.com/user-attachments/assets/04eba5fe-ed52-43b9-b444-37485b0892be" width="100%" height="350" />
+
 
 
 Script to bootstrap hybrid django-react projects set up inspired by 
