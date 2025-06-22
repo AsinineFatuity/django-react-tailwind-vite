@@ -1,6 +1,6 @@
 import os
-import content
-from constants import names
+from .. import content
+from ..constants import names
 
 
 class SetUpDjangoDir:

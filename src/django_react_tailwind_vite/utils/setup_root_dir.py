@@ -1,6 +1,6 @@
 import os
-from constants import names
-import content
+from .. import content
+from ..constants import names
 
 
 class SetUpRootDir:

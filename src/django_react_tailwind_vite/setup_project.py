@@ -1,5 +1,5 @@
 import os
-from utils import SetUpRootDir, SetUpFrontendDir, SetUpDjangoDir
+from .utils import SetUpRootDir, SetUpFrontendDir, SetUpDjangoDir
 class SetUpFrontend:
 
     def __init__(self, django_project_folder: str):
