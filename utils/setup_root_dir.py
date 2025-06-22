@@ -17,14 +17,11 @@ class SetUpRootDir:
         self._set_up_static_folder()
 
     def _setup_package_json_file(self):
-        print("📦 Setting up package.json file and installing dependencies ...")
+        print("📦 Setting up package.json file")
         with open(names.PACKAGE_JSON_FILE, "w") as package_json_file:
             package_json_file.write(content.PACKAGE_JSON_CONTENT)
         print("✅ package.json file created successfully")
-        print("📦 Updating dependencies ...")
-        subprocess.run(["npx", "npm-check-updates", "-u"])
-        print("✅ Dependencies upgraded successfully")
-
+        
     def _setup_vite_config_files(self):
         with open(names.VITE_CONFIG_FILE, "w") as vite_config_file:
             vite_config_file.write(content.VITE_CONFIG_CONTENT)
