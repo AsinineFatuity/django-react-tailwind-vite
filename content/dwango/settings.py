@@ -40,7 +40,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'test_vite.urls'
+ROOT_URLCONF = '{}.urls'
 
 TEMPLATES = [
     {
@@ -57,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'test_vite.wsgi.application'
+WSGI_APPLICATION = '{}.wsgi.application'
 
 
 # Database
@@ -130,3 +130,6 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 7  # 1 week
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 """
+
+def write_django_settings_content(project_name: str):
+    return DJANGO_SETTINGS_CONTENT.format(project_name, project_name)

@@ -1,7 +1,8 @@
 from content.package_json import PACKAGE_JSON_CONTENT
-from content.webpack_common import WEBPACK_COMMON_CONTENT
-from content.webpack_dev import WEBPACK_DEV_CONTENT
-from content.webpack_prod import WEBPACK_PROD_CONTENT
+from content.vite_config import VITE_CONFIG_CONTENT
+from content.dwango.asgi import write_django_asgi_content
+from content.dwango.wsgi import write_django_wsgi_content
+from content.dwango.settings import write_django_settings_content
 from content.html import INDEX_HTML_CONTENT, HOME_HTML_CONTENT
 from content.src_dir import INDEX_TSX_CONTENT, APP_TSX_CONTENT, HOME_PAGE_CONTENT
 from content.components import (
@@ -26,4 +27,4 @@ from content.redux_reducer import (
 from content.redux_store import REDUX_STORE_CONTENT
 from content.hooks import HOOKS_INDEX_TS_CONTENT
 from content.ts_config import TS_CONFIG_JSON_CONTENT
-from content.urls import DJANGO_URLS_CONTENT
+from content.dwango.urls import DJANGO_URLS_CONTENT
