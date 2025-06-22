@@ -4,15 +4,9 @@ from django.urls import path, re_path
 
 from django.http import HttpRequest
 from django.views.generic import TemplateView
-from django.conf import settings
-
 
 class HomeView(TemplateView):
-    env_template_dict = {
-        settings.DEBUG: "home.html",
-        not settings.DEBUG: "index.html",
-    }
-    template_name = env_template_dict[settings.DEBUG]
+    template_name = "home.html"
     context = {}
 
     def get(self, request: HttpRequest, *args, **kwargs):
