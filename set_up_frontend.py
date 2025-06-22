@@ -1,7 +1,7 @@
 import os
 import subprocess
 from constants import names
-from utils import SetUpRootDir, SetUpFrontendDir, SetUpDjangoUrlsFile
+from utils import SetUpRootDir, SetUpFrontendDir, SetUpDjangoDir
 
 
 class SetUpFrontend:
@@ -18,10 +18,10 @@ class SetUpFrontend:
         root_dir.set_up_root_dir()
         frontend_dir = SetUpFrontendDir(self.project_root)
         frontend_dir.set_up_frontend_dir()
-        django_urls_file = SetUpDjangoUrlsFile(
+        django_dir = SetUpDjangoDir(
             self.project_root, self.django_project_folder
         )
-        django_urls_file.setup_django_urls_file()
+        django_dir.setup_django_dir()
     
     def _create_django_project_folder(self):
         # Create the Django project folder if it does not exist
