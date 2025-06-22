@@ -15,6 +15,7 @@ class SetUpRootDir:
         self._setup_vite_config_files()
         self._setup_templates_folder()
         self._set_up_static_folder()
+        self._setup_requirements_file()
 
     def _setup_package_json_file(self):
         print("📦 Setting up package.json file")
@@ -40,6 +41,11 @@ class SetUpRootDir:
     def _set_up_static_folder(self):
         print("📦 Setting up static folder ...")
         os.makedirs(names.STATIC_DIR, exist_ok=True)
+        os.chdir(names.STATIC_DIR)
+        os.makedirs(names.CSS_DIR, exist_ok=True)
+        os.chdir(names.CSS_DIR)
+        with open(names.MAIN_CSS_FILE, "w") as main_css_file:
+            main_css_file.write(content.MAIN_CSS_CONTENT)
         print("✅ Static folder created successfully")
         os.chdir(self.PROJECT_ROOT)
 
@@ -48,4 +54,17 @@ class SetUpRootDir:
         with open(names.TS_CONFIG_FILE, "w") as ts_config_file:
             ts_config_file.write(content.TS_CONFIG_JSON_CONTENT)
         print("✅ tsconfig.json file created successfully")
+        os.chdir(self.PROJECT_ROOT)
+    
+    def _setup_requirements_file(self):
+        print("📦 Setting up requirements.txt file ...")
+        with open(names.REQUIREMENTS_FILE, "w") as requirements_file:
+            requirements_file.write(content.REQUIREMENTS_CONTENT)
+        print("✅ requirements.txt file created successfully")
+        os.chdir(self.PROJECT_ROOT)
+    def _setup_gitignore_file(self):
+        print("📦 Setting up .gitignore file ...")
+        with open(names.GITIGNORE_FILE, "w") as gitignore_file:
+            gitignore_file.write(content.GITIGNORE_CONTENT)
+        print("✅ .gitignore file created successfully")
         os.chdir(self.PROJECT_ROOT)

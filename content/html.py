@@ -1,4 +1,5 @@
 HOME_HTML_CONTENT = """
+{% load django_vite %}
 {% load static %}
 <!doctype html>
 <html lang="en" xml:lang="en">

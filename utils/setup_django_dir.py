@@ -6,7 +6,7 @@ from constants import names
 class SetUpDjangoDir:
     def __init__(self, project_root: str, django_project_folder: str):
         self.PROJECT_ROOT = project_root
-        os.mkdir(django_project_folder)
+        os.makedirs(django_project_folder, exist_ok=True)
         self.django_project_folder = django_project_folder
     
     def setup_django_dir(self):
@@ -16,9 +16,8 @@ class SetUpDjangoDir:
         self._setup_django_asgi_file()
         self._setup_django_wsgi_file()
         os.chdir(self.PROJECT_ROOT)
-        with open(names.REQUIREMENTS_FILE, "w") as requirements_file:
-            requirements_file.write(content.REQUIREMENTS_CONTENT)
-
+        with open(names.MANAGE_PY_FILE, "w") as manage_file:
+            manage_file.write(content.write_manage_py_content(self.django_project_folder))
         print("✅ Django project files created successfully")
         
     def _setup_django_urls_file(self):

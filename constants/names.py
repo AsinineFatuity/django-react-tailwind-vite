@@ -13,6 +13,7 @@ UTILS_DIR = "utils"
 HOOKS_DIR = "hooks"
 PAGES_DIR = "pages"
 STATIC_DIR = "static"
+CSS_DIR = "css"
 TEMPLATES_DIR = "templates"
 
 # File Names
@@ -34,6 +35,9 @@ FEEDBACK_TOAST_REDUX_FILE = "feedbackToast.ts"
 DEV_ENV_FILE = ".env.development"
 DEV_PROD_FILE = ".env.production"
 REQUIREMENTS_FILE = "requirements.txt"
+MANAGE_PY_FILE = "manage.py"
+MAIN_CSS_FILE = "main.css"
+GITIGNORE_FILE = ".gitignore"
 
 # Django Files
 DJANGO_URLS_FILE = "urls.py"
