@@ -1,0 +1,23 @@
+[project]
+name = "django-react-tailwind-vite"
+version = "0.1.5"
+description = "Script to set up a Django-React hybrid project with Tailwind CSS and Vite"
+readme = "README.md"
+authors = [
+    { name = "Kembo Franklyne", email = "kembofranklyne@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+]
+
+[project.scripts]
+dj-vite = "django_react_tailwind_vite.setup_project:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.workspace]
+members = [
+    "django-react-tailwind-vite",
+]

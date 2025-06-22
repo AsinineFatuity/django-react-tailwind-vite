@@ -1,4 +1,4 @@
-DJANGO_SETTINGS_CONTENT="""
+DJANGO_SETTINGS_CONTENT = """
 import os
 from pathlib import Path
 
@@ -105,15 +105,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 #static files section
-STATIC_ROOT = os.path.join(BASE_DIR.parent, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [
- os.path.join(BASE_DIR, "assets"),
+ os.path.join(BASE_DIR, "assets"), # This is where the vite build will output the static files
+ os.path.join(BASE_DIR, "static")
 ]
 DJANGO_VITE = {{
   "default": {{
-    "dev_mode": True,
+    "dev_mode": DEBUG,
     "manifest_path": os.path.join(BASE_DIR, "assets", "manifest.json"),
   }}
 }}
@@ -130,6 +131,7 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 7  # 1 week
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 """
+
 
 def write_django_settings_content(project_name: str):
     return DJANGO_SETTINGS_CONTENT.format(project_name, project_name)

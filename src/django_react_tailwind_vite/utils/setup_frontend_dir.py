@@ -1,10 +1,9 @@
 import os
-import content
-from constants import names
+from .. import content
+from ..constants import names
 
 
 class SetUpFrontendDir:
-
     def __init__(self, project_root: str):
         self.PROJECT_ROOT = project_root
         self.FRONTEND_DIR = os.path.join(project_root, names.FRONTEND_DIR)
