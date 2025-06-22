@@ -1,0 +1,17 @@
+[project]
+name = "django-react-tailwind-vite"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Kembo Franklyne", email = "asininefatuity@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+django-react-tailwind-vite = "django_react_tailwind_vite:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
