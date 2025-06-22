@@ -3,7 +3,7 @@ from content.vite_config import VITE_CONFIG_CONTENT
 from content.dwango.asgi import write_django_asgi_content
 from content.dwango.wsgi import write_django_wsgi_content
 from content.dwango.settings import write_django_settings_content
-from content.html import INDEX_HTML_CONTENT, HOME_HTML_CONTENT
+from content.html import HOME_HTML_CONTENT
 from content.src_dir import INDEX_TSX_CONTENT, APP_TSX_CONTENT, HOME_PAGE_CONTENT
 from content.components import (
     COMPONENTS_INDEX_TSX_CONTENT,
