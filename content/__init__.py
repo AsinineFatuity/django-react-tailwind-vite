@@ -1,5 +1,6 @@
 from content.package_json import PACKAGE_JSON_CONTENT
 from content.vite_config import VITE_CONFIG_CONTENT
+from content.requirements import REQUIREMENTS_CONTENT
 from content.dwango.asgi import write_django_asgi_content
 from content.dwango.wsgi import write_django_wsgi_content
 from content.dwango.settings import write_django_settings_content

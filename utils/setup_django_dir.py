@@ -15,6 +15,9 @@ class SetUpDjangoDir:
         self._setup_django_settings_file()
         self._setup_django_asgi_file()
         self._setup_django_wsgi_file()
+        os.chdir(self.PROJECT_ROOT)
+        with open(names.REQUIREMENTS_FILE, "w") as requirements_file:
+            requirements_file.write(content.REQUIREMENTS_CONTENT)
 
         print("✅ Django project files created successfully")
         
