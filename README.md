@@ -6,18 +6,18 @@ Script to bootstrap hybrid django-react projects set up inspired by
 * Session based Auth for SPA/Django as described by Nik Tomazic in [this article](https://testdriven.io/blog/django-spa-auth/)
 * The benefits of this set up is that you're able to use django features where you want and selectively use React. Also you don't have to worry about JWT as we're using normal django authentication.
 ## Quick Overview
-1. React/Redux/Typescript (Javascript not supported)
-2. Webpack is used for bundling and Babel for the compiling
-3. React Bootstrap for styling (Tailwind CSS coming soon)
+1. React/Redux/Typescript (Javascript not recommended)
+2. Vite is used for bundling
+3. Tailwind CSS is used for styling
 4. Quite opinionated but loosely coupled. The contents matter, structure doesn't
 ## Run The Script
-1. Install Django using your preferred package manager
-2. Ensure you have installed node and npm
-3. Run the script `python3 set_up_frontend.py`
-4. This will configure webpack, redux and the react app and install all dependecies
+1. You need to have node and a preferred dependency manager installed
+2. Run the script `python3 set_up_frontend.py`
+3. This will configure vite, redux and the react app and install all dependecies
 ## Post Script Instructions
 1. Install frontend packages by running `pnpm install` or equivalent
-2. Add this to your django project settings file
+2. Install the python dependencies by running `uv pip install -r requirements.txt` or equivalent
+2. The django project settings file has the following additions
    ```python
    #TEMPLATES["DIRS"] list in project/settings.py
    import os # top of file
@@ -25,8 +25,14 @@ Script to bootstrap hybrid django-react projects set up inspired by
    #static files section
    STATIC_ROOT = os.path.join(BASE_DIR.parent, "static")
    STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "assets"),
    ]
+   DJANGO_VITE = {
+   "default": {
+      "dev_mode": DEBUG, #to serve contents dynamically
+      "manifest_path": os.path.join(BASE_DIR, "assets", "manifest.json"),
+   }
+   }
    #Allow Session Auth For React SPA
    CSRF_COOKIE_SAMESITE = "Lax"
    SESSION_COOKIE_SAMESITE = "Lax"
@@ -35,29 +41,18 @@ Script to bootstrap hybrid django-react projects set up inspired by
 
    SESSION_COOKIE_AGE = 60 * 60 * 24 * 7  # 1 week
    ```
-
-3. Add the following to your `.gitignore file`
-```bash
-node_modules/
-dist/ 
-
-# Ignore hot-update files and build output
-static/hot/
-static/index-bundle.js
-static/index-bundle.js.map
-static/main.css
-static/main.css.map
-static/index.html
-static/index-bundle.js.LICENSE.txt
-static/output.css
-
-# Ignore the frontend environments
-frontend/environments/.env.development
-frontend/environments/.env.production
-```
+To further understand these values, read:
+* [Nick Tomazic's article](https://testdriven.io/blog/django-spa-auth/) 
+* [django-vite's documentation](https://github.com/MrBin99/django-vite)
 ## Start Your Project
-1. Run `npm start` and `./manage.py runserver` in separate terminal windows
+1. Run `pnpm run dev` and `./manage.py runserver` in separate terminal windows
 2.  Navigate to `http://127.0.0.1:8000` and you will see the react home page loaded
+ * Always use that url instead of localhost so that you use session auth
 3. Try changing contents in `frontend/src/pages/home.tsx` to see live reload in action
 4. The django urls connects to the react home via the `app/*` regex wildcard
 5. Build on from there
+## Production
+1. Ensure you set the `DJANGO_VITE["default"]["dev_mode"]` to `False`
+2. Run `pnpm run build`
+3. Run `./manage.py collectstatic`
+4. Deploy your app and django-vite will auto serve bundled files
