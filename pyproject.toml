@@ -10,7 +10,7 @@ requires-python = ">=3.10"
 dependencies = []
 
 [project.scripts]
-django-react-tailwind-vite = "django_react_tailwind_vite:main"
+dj-vite = "django_react_tailwind_vite:main"
 
 [build-system]
 requires = ["hatchling"]
