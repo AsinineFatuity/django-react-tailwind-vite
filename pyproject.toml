@@ -1,10 +1,10 @@
 [project]
 name = "django-react-tailwind-vite"
 version = "0.1.0"
-description = "Add your description here"
+description = "Script to set up a Django-React hybrid project with Tailwind CSS, and Vite."
 readme = "README.md"
 authors = [
-    { name = "Kembo Franklyne", email = "asininefatuity@gmail.com" }
+    { name = "Kembo Franklyne", email = "kembofranklyne@gmail.com" }
 ]
 requires-python = ">=3.12"
 dependencies = []
