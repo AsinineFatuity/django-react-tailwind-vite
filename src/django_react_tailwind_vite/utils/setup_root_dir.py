@@ -1,5 +1,4 @@
 import os
-import subprocess
 from constants import names
 import content
 
