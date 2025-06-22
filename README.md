@@ -1,5 +1,6 @@
 # Hybrid Django-React Bootstrap
-![image](https://github.com/user-attachments/assets/254d65ce-ba5c-41c4-832a-2a0a7f312556)
+![ChatGPT Image Jun 22, 2025, 03_31_41 PM](https://github.com/user-attachments/assets/04eba5fe-ed52-43b9-b444-37485b0892be)
+
 
 Script to bootstrap hybrid django-react projects set up inspired by 
 * The hybrid Python/Django/React Architecture as described by Cory Zue in [this article](https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-javascript-pipeline/)
