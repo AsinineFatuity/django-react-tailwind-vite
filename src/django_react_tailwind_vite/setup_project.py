@@ -1,9 +1,5 @@
 import os
-import subprocess
-from constants import names
 from utils import SetUpRootDir, SetUpFrontendDir, SetUpDjangoDir
-
-
 class SetUpFrontend:
 
     def __init__(self, django_project_folder: str):
