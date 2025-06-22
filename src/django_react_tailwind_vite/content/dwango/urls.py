@@ -10,10 +10,6 @@ class HomeView(TemplateView):
     context = {}
 
     def get(self, request: HttpRequest, *args, **kwargs):
-        self.context = {}
-        return self.render_to_response(self.context)
-
-    def post(self, request: HttpRequest, *args, **kwargs):
         return self.render_to_response(self.context)
 
 urlpatterns = [

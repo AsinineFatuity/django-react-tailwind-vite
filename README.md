@@ -16,6 +16,7 @@ Script to bootstrap hybrid django-react projects set up inspired by
 2. Create a new virtual environment using `uv venv .venv` or equivalent
 3. Install the package with `uv pip install django-react-tailwind-vite` or equivalent
 4. Run the script with `dj-vite`, this will configure vite, redux and the react app
+5. You can uninstall the package once you've verified successful installation
 ## Post Script Instructions
 1. Install frontend packages by running `pnpm install` or equivalent
 2. Install the python dependencies by running `uv pip install -r requirements.txt` or equivalent
