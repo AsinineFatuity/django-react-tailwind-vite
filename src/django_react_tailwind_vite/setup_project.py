@@ -16,13 +16,13 @@ class SetUpFrontend:
         django_dir = SetUpDjangoDir(self.project_root, self.django_project_folder)
         django_dir.setup_django_dir()
 
-
-django_project_folder = input("Enter the name of your Django project: ")
-frontend = SetUpFrontend(django_project_folder)
-frontend.set_up_frontend_project()
-print("#" * 50)
-print(f"🎉 Frontend {django_project_folder} setup completed successfully!")
-print("#" * 50)
-print(
-    "Visit https://github.com/AsinineFatuity/django-react-bootstrap-webpack#post-script-instructions for post script instruction"
-)
+def main():
+    django_project_folder = input("Enter the name of your Django project: ")
+    frontend = SetUpFrontend(django_project_folder)
+    frontend.set_up_frontend_project()
+    print("#" * 50)
+    print(f"🎉 Your project {django_project_folder} setup completed successfully!")
+    print("#" * 50)
+    print(
+        "Visit https://github.com/AsinineFatuity/django-react-tailwind-vite#post-script-instructions for post script instructions"
+    )
