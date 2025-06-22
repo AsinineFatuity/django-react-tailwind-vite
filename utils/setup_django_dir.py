@@ -9,7 +9,7 @@ class SetUpDjangoDir:
         os.mkdir(django_project_folder)
         self.django_project_folder = django_project_folder
     
-    def set_up_django_dir(self):
+    def setup_django_dir(self):
         print("📦 Setting up Django project files ...")
         self._setup_django_urls_file()
         self._setup_django_settings_file()

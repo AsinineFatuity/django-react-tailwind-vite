@@ -21,27 +21,7 @@ class SetUpFrontend:
         django_dir = SetUpDjangoDir(
             self.project_root, self.django_project_folder
         )
-        django_dir.setup_django_dir()
-    
-    def _create_django_project_folder(self):
-        # Create the Django project folder if it does not exist
-        if not os.path.exists(self.django_project_folder):
-            try:
-                subprocess.run(["django-admin", "startproject", self.django_project_folder, "."], check=True)
-                print(f"✅ Initialized django project: {self.django_project_folder}")
-                return True
-            except OSError as e:
-                print(f"❌ Failed to initialize Django project: {e}")
-        # check django folder is valid
-        unique_project_files = [names.DJANGO_ASGI_FILE, names.DJANGO_WSGI_FILE]
-        for root, dirs, files in os.walk(self.django_project_folder):
-            if any(file in files for file in unique_project_files):
-                return True
-        print(
-            "❌ Django project folder is not valid, please create a django project and try again"
-        )
-        return False
-        
+        django_dir.setup_django_dir()        
 
 
 django_project_folder = input("Enter the name of your Django project: ")
