@@ -18,7 +18,7 @@ Script to bootstrap hybrid django-react projects set up inspired by
 ## Post Script Instructions
 1. Install frontend packages by running `pnpm install` or equivalent
 2. Install the python dependencies by running `uv pip install -r requirements.txt` or equivalent
-2. The django project settings file has the following additions
+3. The django project settings file has the following additions
    ```python
    #TEMPLATES["DIRS"] list in project/settings.py
    import os # top of file
@@ -45,6 +45,26 @@ Script to bootstrap hybrid django-react projects set up inspired by
 To further understand these values, read:
 * [Nick Tomazic's article](https://testdriven.io/blog/django-spa-auth/) 
 * [django-vite's documentation](https://github.com/MrBin99/django-vite)
+4. For Making API Queries to your backend, use this snippet in your axios client
+```javascript
+import axios from "axios";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+async function restClient(url: string, method: string, data: any) {
+  const response = await axios({
+    url: url,
+    method: method,
+    data: data,
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": cookies.get("csrftoken"),
+    },
+    withCredentials: true,
+  });
+  return response;
+}
+```
+The idea is to have csrf token as part of your headers. That's why you don't need JWT!
 ## Start Your Project
 1. Run `pnpm run dev` and `./manage.py runserver` in separate terminal windows
 2.  Navigate to `http://127.0.0.1:8000` and you will see the react home page loaded
