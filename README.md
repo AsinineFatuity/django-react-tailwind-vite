@@ -99,7 +99,7 @@ async function graphqlClient(query: any) {
 ```
 The idea is to have csrf token as part of your headers. That's why you don't need JWT!
 ## Start Your Project
-1. Run `pnpm run dev` and `./manage.py runserver` in separate terminal windows
+1. Run `pnpm run dev` and `python manage.py runserver` in separate terminal windows
 2.  Navigate to `http://127.0.0.1:8000` and you will see the react home page loaded
  * Always use that url instead of localhost so that you use session auth
 Alternatively, you may use `localhost:8000` but ensure this is also equal to urls in the react app
@@ -110,5 +110,5 @@ Alternatively, you may use `localhost:8000` but ensure this is also equal to url
 ## Production
 1. Ensure you set the `DJANGO_VITE["default"]["dev_mode"]` to `False`
 2. Run `pnpm run build`
-3. Run `./manage.py collectstatic`
+3. Run `python manage.py collectstatic`
 4. Deploy your app and django-vite will auto serve bundled files
