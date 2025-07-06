@@ -25,7 +25,8 @@ or equivalent `pip` or `pipenv` commands
 ```python 
 dj-vite 
 ``` 
-this will configure vite, redux and the react app
+this will configure django, vite, tailwind and the react app
+
 5. You can uninstall the package once you've verified successful installation
 ## Post Script Instructions
 1. Update and install frontend packages by running `pnpm up --latest && pnpm install` or equivalent
@@ -64,6 +65,8 @@ To further understand these values, read:
 import axios from "axios";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
+
+//Rest Client Snippet
 async function restClient(url: string, method: string, data: any) {
   const response = await axios({
     url: url,
@@ -77,12 +80,30 @@ async function restClient(url: string, method: string, data: any) {
   });
   return response;
 }
+// Graphql Client Snippet
+async function graphqlClient(query: any) {
+  const GRAPHQL_API_URL = "http://127.0.0.1:8000/your_graphql_endpoint"
+  const queryResult = await axios.post(
+    GRAPHQL_API_URL,
+    { query },
+    {
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": cookies.get("csrftoken"),
+      },
+      withCredentials: true,
+    },
+  );
+  return queryResult;
+}
 ```
 The idea is to have csrf token as part of your headers. That's why you don't need JWT!
 ## Start Your Project
 1. Run `pnpm run dev` and `./manage.py runserver` in separate terminal windows
 2.  Navigate to `http://127.0.0.1:8000` and you will see the react home page loaded
  * Always use that url instead of localhost so that you use session auth
+Alternatively, you may use `localhost:8000` but ensure this is also equal to urls in the react app
+
 3. Try changing contents in `frontend/src/pages/home.tsx` to see live reload in action
 4. The django urls connects to the react home via the `app/*` regex wildcard
 5. Build on from there
