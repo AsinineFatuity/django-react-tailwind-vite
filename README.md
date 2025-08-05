@@ -2,6 +2,7 @@
 <img src="https://github.com/user-attachments/assets/04eba5fe-ed52-43b9-b444-37485b0892be" width="100%" height="350" />
 
 
+[![PyPI Downloads](https://static.pepy.tech/badge/django-react-tailwind-vite)](https://pepy.tech/projects/django-react-tailwind-vite)
 
 Script to bootstrap hybrid django-react projects set up inspired by 
 * The hybrid Python/Django/React Architecture as described by Cory Zue in [this article](https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-javascript-pipeline/)
