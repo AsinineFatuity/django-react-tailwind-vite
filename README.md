@@ -110,7 +110,7 @@ Alternatively, you may use `localhost:8000` but ensure this is also equal to url
 5. Build on from there
 ## Production
 1. Ensure you set the `DJANGO_VITE["default"]["dev_mode"]` to `False`
-   * A nifty way is to set it `DJANGO_VITE["default"]["dev_mode"]=DEBUG`
+   * A nifty way is to set it `DJANGO_VITE["default"]["dev_mode"]=DEBUG` so that it sets dynamically per your environment
 2. Run `pnpm run build`
 3. Run `python manage.py collectstatic`
 4. Deploy your app and django-vite will auto serve bundled files
