@@ -10,10 +10,15 @@ TS_CONFIG_JSON_CONTENT = """
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "lib": ["dom", "esnext"]
+    "lib": ["dom", "esnext"],
+    "paths": {
+      "@/*": ["./frontend/src/*"],
+      "images/*": ["./frontend/src/images/*"],
+    }
   },
   "include": ["frontend/**/*"]
 }
+
 """
