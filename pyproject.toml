@@ -1,6 +1,6 @@
 [project]
 name = "django-react-tailwind-vite"
-version = "1.0.0"
+version = "1.1.0"
 description = "Script to set up a Django-React hybrid project with Tailwind CSS and Vite"
 readme = "README.md"
 license = { text = "MIT" }
